@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+ \newcommand{\abs}[1]{\left| #1 \right|}
+\begin{document}
+
+\title{Computational Molecular Biology Project\\User Manual}
+\author{Poovanesen Padayachee 0507801J\\Colin Phillips 0707021p\\Mcebisi Hector Mdlozini 420607}
+
+\maketitle
+\newpage
+
+
+\section{Calculate alignment score on cluster}
+The User Manual is divided into three successive components. 
+\begin{itemize}
+\item{Retrieving the sequence data from the cluster}
+\item{Calculating the alignment scores of distinct sequences, two at a time}
+\item{Plotting the histogram as well as normal distribution of the collected data from many samples}
+\end{itemize}
+
+\subsection{Retrieving sequence data}
+The python scropt \textbf{seqretsplit.py} is used to retrieve sequences from the database stored on the cluster. It is run using the command \textbf{python seqretsplit.py}. The default setting allows for 250 sequences to be retrieved with a single iteration of the program. The sequence textfile name as well as the directory the sequences are stored in must be specified in the source code. The directory must be created prior to running the program.
+
+\subsection{Calculating the alignment scores}
+The python script \textbf{cmbproj.py} is used to calculate the alignment scores of two distinct sequences at a time. The scores are then collated into a text file named \textbf{score.txt}. Other text files may exist in the same directory as \textbf{score.txt} but these files are used as working files in order to extract the alignment scores from. They're given unique filenames in order to differentiate the multiple processes that are run simultaneously. The script is run using the command \textbf{python cmbproj.py (filename of folder 1) (filename of folder 2)}, where folder 1 stores one set of sequences and folder 2 stores another set.
+
+\subsection{Plotting the histogram}
+
+The python script \textbf{histogram.py} is used to plot a histogram of value versus frequency of value. It accepts values from two different text files each containing a set of alignment values. Along with the histogram, a normal distribution curve of the data is plotted coincident with the histogram.The script is run using the command \textbf{python histogram.py }, .
+\newpage
+
+\end{document}
